@@ -51,7 +51,16 @@ const fetch = (...args) => import('node-fetch').then(({
   
     return {
       statusCode: 500,
-      body: html
+      body: `
+    <html lang="ru">
+    <head>
+      <meta charset="utf-8" />
+      <title>Detwelvulation Project - Listen to and download microtonal music online</title>
+    </head>
+    <body>
+     ${html}
+    </body>
+    </html>`
     };
   
   

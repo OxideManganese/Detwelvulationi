@@ -1,0 +1,9 @@
+[functions]
+  directory = "functions"
+
+# The following redirect is intended for use with most SPAs that handle
+# routing internally.
+[[redirects]]
+  from = "/"
+  to = "/.netlify/functions/home"
+  status = 200
