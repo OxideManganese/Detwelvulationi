@@ -6,21 +6,24 @@ const fetch = (...args) => import('node-fetch').then(({
   
     const response = await fetch(`http://seraph.it/Detwelvulation.html`);
     let page = await response.text();
-    page = page.split('<!-- Start main content wrapper -->')[1].split('<!-- End content -->')[0];
+    page = page.split('<div id="content">')[1].split('<!-- End main content wrapper -->')[0];
   
     let list2 = [];
     let tracklist = ``;
-    let list = page.split(`" rel="external" target="_blank">`);
-  
+    let list = page.split(`rel="external">`);
+
     list.forEach((elem, i) => {
       if (i > 0) {
         let track = elem.split('</a>')[0]
-        let links = elem.split(`serif;"><a href="`);
+        let links = elem.split(`http://`);
+        links.forEach((e, i) => {
+          links[i] = `https://` + e.split(`"`)[0]
+        })
         list2.push({
           name: track,
           mp3: links.find(elem => elem.indexOf(".mp3") != -1),
           mov: links.find(elem => elem.indexOf(".mov") != -1),
-          youtube: (links.find(elem => elem.indexOf("youtube") != -1) || '"').split(`"`)[0],
+          youtube: links.find(elem => elem.indexOf("youtube") != -1),
         });
       }
     })
