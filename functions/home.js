@@ -19,7 +19,7 @@ const fetch = (...args) => import('node-fetch').then(({
         links.forEach((e, i) => {
           links[i] = `http://` + e.split(`"`)[0]
         })
-        list2.push({
+        if (track != "movie") list2.push({
           name: track,
           mp3: links.find(elem => elem.indexOf(".mp3") != -1),
           mov: links.find(elem => elem.indexOf(".mov") != -1),
@@ -30,12 +30,14 @@ const fetch = (...args) => import('node-fetch').then(({
   
     console.log(list2);
   
-    let html = `<h1>Detwelvulation Project by Carlo Serafini</h1>
+    let html = `<h1>Detwelvulation Project <i style="color: darkgreen;">by Carlo Serafini</i></h1>
+  <p>Detwelvulation Project is a collection of original Xenharmonic compositions in a variety of alternative tuning systems</p>
   <p>On this site you can listen to and download microtonal music for free. Author of music: <a href="http://seraph.it/">Carlo Serafini</a>, developer of this site: <a href="https://t.me/OxideManganese">@OxideManganese</a></p>
-  <image src="https://lastfm.freetls.fastly.net/i/u/770x0/1391126fe1e43be47725d42a8f23a862.jpg#1391126fe1e43be47725d42a8f23a862" width="300" alt="cover">`
+  <p>To download all tracks at once (≈1Gb), press Ctrl+S and select the save directory.</p>
+  <image src="http://seraph.it/Detwelvulation_files/page17_sidebar_1.jpg" width="300" alt="cover">`
   
-    list2.forEach(track => {
-      html += `<h3>Carlo Serafini - ${track.name}</h3>`
+    list2.forEach((track, i) => {
+      html += `<h3>${list2.length - 1 - i}. Carlo Serafini - ${track.name}</h3>`
       if (track.mp3) html += `<audio controls src="${track.mp3}"></audio>`;
   
   
@@ -64,8 +66,8 @@ const fetch = (...args) => import('node-fetch').then(({
       <meta name="copyright" content="(С) Networks M.N.O. tv"/>
       <meta name="author" content="Tsvetkov Fedor"/>
     </head>
-    <body>
-     ${html}
+    <body style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/1391126fe1e43be47725d42a8f23a862.jpg#1391126fe1e43be47725d42a8f23a862');background-size: 100%;background-position: center;background-attachment: fixed;">
+    <div style="background: whitesmoke;max-width: 800px;margin: 0 auto;padding: 40px;font-family: sans-serif; border-radius: 10px;">${html}</div>
     </body>
     </html>`
     };
