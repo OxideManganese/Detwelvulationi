@@ -17,7 +17,7 @@ const fetch = (...args) => import('node-fetch').then(({
         let track = elem.split('</a>')[0]
         let links = elem.split(`http://`);
         links.forEach((e, i) => {
-          links[i] = `https://` + e.split(`"`)[0]
+          links[i] = `http://` + e.split(`"`)[0]
         })
         list2.push({
           name: track,
@@ -60,6 +60,9 @@ const fetch = (...args) => import('node-fetch').then(({
     <head>
       <meta charset="utf-8" />
       <title>Detwelvulation Project - Listen to and download microtonal music online</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="copyright" content="(С) Networks M.N.O. tv"/>
+      <meta name="author" content="Tsvetkov Fedor"/>
     </head>
     <body>
      ${html}
