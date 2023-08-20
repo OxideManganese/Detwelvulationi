@@ -44,7 +44,7 @@ const fetch = (...args) => import('node-fetch').then(({
   
       if (track.mov) html += `<video width="300" height="190" src="${track.mov}" controls="controls" poster="http://seraph.it/Detwelvulation_files/page17_sidebar_1.jpg"></video>`;
   
-      if (track.youtube) html += `<iframe src="${track.youtube.replace('watch?v=', 'embed/').replace('http','https')}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="300" height="190"></iframe>`;
+      if (track.youtube) html += `<iframe src="${track.youtube.replace('watch?v=', 'embed/').replace('http:','https:')}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="300" height="190"></iframe>`;
 
 
       html += `<div class="knopki">
