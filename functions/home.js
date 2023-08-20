@@ -32,7 +32,7 @@ const fetch = (...args) => import('node-fetch').then(({
   
     let html = `<h1>Detwelvulation Project <i style="color: darkgreen;">by Carlo Serafini</i></h1>
   <p>Detwelvulation Project is a collection of original Xenharmonic compositions in a variety of alternative tuning systems. This is Carlo Serafini's most streamed album on Last.fm with over 800 scrobbles</p>
-  <p>On this site you can listen to and download all the tracks from <a href="http://seraph.it/">Carlo Serafini's</a> Detwelvulation project for free. Developer of this site: <a href="https://t.me/OxideManganese">@OxideManganese</a></p>
+  <p>On this site you can listen to and download all the tracks from <a href="http://seraph.it/" target="_blank">Carlo Serafini's</a> Detwelvulation project for free. Developer of this site: <a href="https://t.me/OxideManganese" target="_blank">@OxideManganese</a></p>
   <p>To download all tracks at once (≈1Gb), press Ctrl+S and select the save directory.</p>
   <image src="https://ia802705.us.archive.org/3/items/FastAndFurious13/detwelvulation.jpg" width="300" alt="cover">`
   
