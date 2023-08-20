@@ -19,6 +19,7 @@ const fetch = (...args) => import('node-fetch').then(({
         links.forEach((e, i) => {
           links[i] = `http://` + e.split(`"`)[0]
         })
+        if (track == "Galactic Overload") links.push("https://www.youtube.com/watch?v=kqitxSW9NTk");
         if (track != "movie") list2.push({
           name: track,
           mp3: links.find(elem => elem.indexOf(".mp3") != -1),
@@ -41,17 +42,17 @@ const fetch = (...args) => import('node-fetch').then(({
       if (track.mp3) html += `<audio controls src="${track.mp3}"></audio>`;
   
   
-      if (track.mov) html += `<video width="300" height="210" src="${track.mov}" controls="controls" poster="http://seraph.it/Detwelvulation_files/page17_sidebar_1.jpg"></video>`;
+      if (track.mov) html += `<video width="300" height="190" src="${track.mov}" controls="controls" poster="http://seraph.it/Detwelvulation_files/page17_sidebar_1.jpg"></video>`;
   
+      if (track.youtube) html += `<iframe src="${track.youtube.replace('watch?v=', 'embed/')}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="300" height="190"></iframe>`;
+
+
       html += `<div class="knopki">
     <a href="https://www.last.fm/ru/music/Carlo+Serafini/Detwelvulation+Project/${track.name}" target="_blank">
-    <img src="https://www.last.fm/static/images/lastfm_avatar_applemusic.b06eb8ad89be.png" alt="Last.fm" width="40" height="40"/></a>`;
+    <img alt="Last.fm" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Lastfm_logo.svg/320px-Lastfm_logo.svg.png" height="20"></a>
+    </div>`;
   
-      if (track.youtube) html += `
-    , <a href="${track.youtube}" target="_blank">
-    <img src="https://www.youtube.com/s/desktop/510f0670/img/favicon_96x96.png" alt="Last.fm" width="40" height="40"/></a>`;
-  
-      html += `</div><hr><br>`;
+      html += `<hr><br>`;
     })
   
     return {
