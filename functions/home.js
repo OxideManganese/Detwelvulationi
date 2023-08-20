@@ -65,6 +65,7 @@ const fetch = (...args) => import('node-fetch').then(({
       <meta charset="utf-8" />
       <title>Detwelvulation Project - Listen to and download microtonal music online</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
       <meta name="copyright" content="(С) Networks M.N.O. tv"/>
       <meta name="author" content="Tsvetkov Fedor"/>
     </head>
