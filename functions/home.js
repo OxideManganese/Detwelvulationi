@@ -56,7 +56,7 @@ const fetch = (...args) => import('node-fetch').then(({
     })
   
     return {
-      statusCode: 500,
+      statusCode: 200,
       body: `
     <!DOCTYPE html>
     <html lang="ru">
