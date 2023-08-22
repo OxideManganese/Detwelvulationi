@@ -7,3 +7,7 @@
   from = "/"
   to = "/.netlify/functions/home"
   status = 200
+[[redirects]]
+  from = "/list.json"
+  to = "/.netlify/functions/list"
+  status = 200
