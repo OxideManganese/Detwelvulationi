@@ -3,6 +3,8 @@ const fetch = (...args) => import('node-fetch').then(({
   }) => fetch(...args));
   
   exports.handler = async function(event, context) {
+
+    const Parameters = event.queryStringParameters
   
     const response = await fetch(`http://seraph.it/Detwelvulation.html`);
     let page = await response.text();
@@ -25,11 +27,27 @@ const fetch = (...args) => import('node-fetch').then(({
           mp3: links.find(elem => elem.indexOf(".mp3") != -1),
           mov: links.find(elem => elem.indexOf(".mov") != -1),
           youtube: links.find(elem => elem.indexOf("youtube") != -1),
+          number: i
         });
       }
     })
-  
-    console.log(list2);
+
+    if (Parameters.api == "jsonlist") {
+      return {
+        statusCode: 200,
+        body: JSON.stringify(list2)
+      };
+    }
+
+    if (Parameters.api == "random") {
+      const mp3s = list2.filter(track => track.mp3);
+      let randomIndex = Math.floor(Math.random() * mp3s.length);
+
+      return {
+        statusCode: 200,
+        body: mp3s[randomIndex].mp3
+      };
+    }
   
     let html = `<h1>Detwelvulation Project <i style="color: darkgreen;">by Carlo Serafini</i></h1>
   <p>Detwelvulation Project is a collection of original <a src="https://wikipedia.org/wiki/Xenharmonic_music" target="_blank">Xenharmonic</a> compositions in a variety of alternative tuning systems. This is Carlo Serafini's most streamed album on Last.fm with over 800 scrobbles</p>
