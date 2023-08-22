@@ -35,7 +35,11 @@ const fetch = (...args) => import('node-fetch').then(({
     if (Parameters.api == "jsonlist") {
       return {
         statusCode: 200,
-        body: JSON.stringify(list2)
+        body: JSON.stringify(list2),
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Access-Control-Allow-Origin': '*'
+      },
       };
     }
 
@@ -47,7 +51,11 @@ const fetch = (...args) => import('node-fetch').then(({
 
       return {
         statusCode: 200,
-        body: JSON.stringify(resilt)
+        body: JSON.stringify(resilt),
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Access-Control-Allow-Origin': '*'
+      },
       };
     }
   
