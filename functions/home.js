@@ -39,13 +39,14 @@ const fetch = (...args) => import('node-fetch').then(({
       };
     }
 
-    if (Parameters.api == "random") {
+    if (Parameters.api.indexOf('random' != -1)) {
       const mp3s = list2.filter(track => track.mp3);
       let randomIndex = Math.floor(Math.random() * mp3s.length);
+      let resilt = mp3s[randomIndex]
 
       return {
         statusCode: 200,
-        body: mp3s[randomIndex].mp3
+        body: Parameters.api == "rendommp3" ? resilt.mp3 : JSON.stringify('resilt')
       };
     }
   
