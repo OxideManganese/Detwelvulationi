@@ -27,9 +27,12 @@ const fetch = (...args) => import('node-fetch').then(({
           mp3: links.find(elem => elem.indexOf(".mp3") != -1),
           mov: links.find(elem => elem.indexOf(".mov") != -1),
           youtube: links.find(elem => elem.indexOf("youtube") != -1),
-          number: i
         });
       }
+    })
+
+    list2.forEach((track, i) => {
+      list2[i].number = list2.length - i;
     })
 
     if (Parameters.api == "jsonlist") {
@@ -67,7 +70,7 @@ const fetch = (...args) => import('node-fetch').then(({
   <p><b>Links:</b><br><a target="_blank" href="https://www.last.fm/music/Carlo+Serafini/Detwelvulation+Project">Detwelvulation on Last.fm</a><br><a target="_blank" href="http://seraph.it/Detwelvulation.html">Detwelvulation on the Carlo Serafini site</a><br><a target="_blank" href="https://archive.org/details/detwelvulation">Detwelvulation on archive.org</a></p>`
   
     list2.forEach((track, i) => {
-      html += `<h3>${list2.length - i}. Carlo Serafini - ${track.name}</h3>`
+      html += `<h3>${track.number}. Carlo Serafini - ${track.name}</h3>`
       if (track.mp3) html += `<audio controls src="${track.mp3}"></audio>`;
   
   
