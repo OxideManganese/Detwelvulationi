@@ -64,8 +64,7 @@ const fetch = (...args) => import('node-fetch').then(({
   
     let html = `<h1>Detwelvulation Project <i style="color: darkgreen;">by Carlo Serafini</i></h1>
   <p>Detwelvulation Project is a collection of original <a src="https://wikipedia.org/wiki/Xenharmonic_music" target="_blank">Xenharmonic</a> compositions in a variety of alternative tuning systems. This is Carlo Serafini's most streamed album on Last.fm with over 800 scrobbles</p>
-  <p>On this site you can listen to and download all the tracks from <a href="http://seraph.it/" target="_blank">Carlo Serafini's</a> Detwelvulation project for free. Developer of this site: <a href="https://t.me/OxideManganese" target="_blank">@OxideManganese</a></p>
-  <p>To download all tracks at once (≈1Gb), press Ctrl+S and select the save directory.</p>
+  <p>On this site you can listen to and download all the compositions from <a href="http://seraph.it/" target="_blank">Carlo Serafini's</a> Detwelvulation project. Developer of this site: <a href="https://t.me/OxideManganese" target="_blank">@OxideManganese</a></p>
   <image src="https://ia802705.us.archive.org/3/items/FastAndFurious13/detwelvulation.jpg" width="300" alt="cover">
   <p><b>Links:</b><br><a target="_blank" href="https://www.last.fm/music/Carlo+Serafini/Detwelvulation+Project">Detwelvulation on Last.fm</a><br><a target="_blank" href="http://seraph.it/Detwelvulation.html">Detwelvulation on the Carlo Serafini site</a><br><a target="_blank" href="https://archive.org/details/detwelvulation">Detwelvulation on archive.org</a></p>`
   
